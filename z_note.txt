@@ -1,0 +1,39 @@
+240325
+Some needs:
+- group config for topics
+- Word/topic embeding visualization, with group
+- group regularization
+- preprocess bert embedding
+- batching
+- MMI loss
+- BPEMB
+
+Note for folder Data:
+- the data is preprocessed
+- only 20NG in datasets folder is not preprocessed
+    bert embedding should taken from here
+
+Every basic model contains:
+- __init__
+- reparameterize
+- encode
+- get_theta
+- get_beta
+- forward
+    return dict: {loss: xyz}
+- loss_function
+- (decode)
+
+Dataset download link:
+- NYT: https://www.kaggle.com/datasets/nzalake52/new-york-times-articles
+- wikitext103: https://www.kaggle.com/datasets/dekomposition/wikitext103
+- 20NG: https://www.kaggle.com/datasets/crawford/20-newsgroups, or maybe use sklearn
+- IMDB: http://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz
+- Yahoo_answers: https://www.kaggle.com/datasets/soumikrakshit/yahoo-answers-dataset
+- Neurips: https://www.kaggle.com/datasets/benhamner/nips-papers
+- AGNews: https://www.kaggle.com/datasets/amananandrai/ag-news-classification-dataset
+- ACL: https://www.kaggle.com/datasets/ch4itanyap4ndey/acl-dataset
+
+preprocess code from scholar:
+python preprocess.py datasets\20NG\train.jsonlist datasets\20ng\processed\ --vocab-size 5000 --label group --test datasets\20ng\test.jsonlist --stopword snowball
+python preprocess.py datasets\Yahoo_Answers\train.jsonlist datasets\Yahoo_Answers\processed\ --vocab-size 5000 --label label --test datasets\Yahoo_Answers\test.jsonlist --stopword snowball

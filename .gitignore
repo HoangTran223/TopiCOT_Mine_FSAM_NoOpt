@@ -1,0 +1,26 @@
+*.pyc
+build
+dist
+*.egg-info
+
+# Sphinx documentation
+docs/build/
+
+data/*
+datasets/
+results/
+clusteringres/
+wandb/
+
+train/
+test/
+
+!data/20NG/
+!data/IMDB
+!data/AGNews
+!data/YahooAnswers
+!data/20NGu/
+!data/bbc/
+**.bat
+
+.gitkey
